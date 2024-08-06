@@ -1,0 +1,16 @@
+Public Class FormMain
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnHome.Click
+    End Sub
+    Private Sub switchForm(form As Form)
+        pnlMain.Controls.Clear()
+        form.TopLevel = False
+        form.Dock = DockStyle.Fill
+        pnlMain.Controls.Add(form)
+        form.BringToFront()
+        form.Show()
+    End Sub
+    Private Sub FormMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim FormHome = New FormHome()
+        switchForm(FormHome)
+    End Sub
+End Class
